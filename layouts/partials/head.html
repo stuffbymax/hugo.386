@@ -9,4 +9,28 @@
     <link rel="canonical" href="{{ .Site.BaseURL }}">
     {{/* Don't ask why it's like this. This original theme is a mess... */}}
     <!-- <noscript><style>body { visibility: visible }</style></noscript> -->
+    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}/index.xml">
+
+    <!-- next part is Open Graph for Mastodon preview and maybe Twitter -->
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{ .Params.description }}" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="website" />
+    
+<!-- the complete style is used to move the site to the middle and I need the top row for RSS -->
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #content {
+        text-align: left;  
+    }
+</style>
+
 </head>
